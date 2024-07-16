@@ -1,11 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// A constructor is a special member function that is automatically called when an object of that class is created. 
+// Its main purpose is to initialize the object's data members.
+
 class Customer
 {
     string name;
     int accountNo;
-    int blance;
+    int balance;
     int *arr;
 
     public: 
@@ -14,16 +17,16 @@ class Customer
     {
         name = "Sonu";
         accountNo = 1234;
-        blance = 1000;
+        balance = 1000;
         arr = new int[100];
     }
 
     // Parameterized Constructor
-    // Customer(string name, int accountNo, int blance)
+    // Customer(string name, int accountNo, int balance)
     // {
     //     this->name = name;
     //     this->accountNo = accountNo;
-    //     this->blance = blance;
+    //     this->balance = balance;
     // }
 
     // Overloading
@@ -34,7 +37,7 @@ class Customer
     }
 
     // Inline Constructor
-    inline Customer(string a, int b, int c): name(a), accountNo(b), blance(c)
+    inline Customer(string a, int b, int c): name(a), accountNo(b), balance(c)
     {
 
     }
@@ -44,12 +47,12 @@ class Customer
     Customer(Customer &A){
         name = A.name;
         accountNo = A.accountNo;
-        blance = A.blance;
+        balance = A.balance;
     }
 
     void display()
     {
-        cout<<name<<" "<<accountNo<<" "<<blance<<endl;
+        cout<<name<<" "<<accountNo<<" "<<balance<<endl;
     }
 };
 int main(){
