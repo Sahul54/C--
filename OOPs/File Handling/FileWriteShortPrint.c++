@@ -4,8 +4,8 @@ using namespace std;
 
 int main(){
     // print-> 2 3 4 5 6
-    // short->
-    // print->
+    // short 
+    // print-> 2 3 4 5 6
 
     // ofstream fout;
     // fout.open("SortPrint.txt");
