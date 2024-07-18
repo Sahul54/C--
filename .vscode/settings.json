@@ -3,6 +3,9 @@
         "*.ejs": "html",
         "iostream": "cpp",
         "ostream": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp"
     }
 }
