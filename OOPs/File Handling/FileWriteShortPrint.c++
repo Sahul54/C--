@@ -10,12 +10,12 @@ int main(){
     // ofstream fout;
     // fout.open("SortPrint.txt");
 
-    // write
+    // write to file
     ofstream fout("SortPrint.txt");
     fout << "3 4 5 6 1";
     fout.close();
 
-    // Read
+    // Read to file
     ifstream fin("SortPrint.txt");
     vector<int> arr;
     int num;
@@ -31,7 +31,7 @@ int main(){
         cout<<i<<" ";
     }
 
-    // sorted
+    // Sort the vector
     sort(arr.begin(), arr.end());
     
     cout<<"\nAfter sort: ";
