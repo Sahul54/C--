@@ -3,7 +3,7 @@ using namespace std;
 
 class Customer
 {
-    // public:
+    // public:   // ham is private kr dete hai ki taki koi use aa k data change na kr paye
     string name;
     int account_no, balance;
     int age;
