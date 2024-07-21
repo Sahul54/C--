@@ -30,11 +30,12 @@ void printLL(Node* head){
                 cout<<"NULL";
             }
         }
+        cout<<endl;
         
     }
 
 // Find length Link List
-void findLengthLL(Node* head){
+int findLengthLL(Node* head){
     Node* temp = head;
     int count = 0;
 
@@ -43,6 +44,7 @@ void findLengthLL(Node* head){
         count++;
         temp = temp->next;
     }
+    return count;
     cout<<"Link List Length: "<<count;
     
 }
@@ -96,7 +98,36 @@ void insertNodeAtTail(Node* &head, Node* &tail, int data)
         tail->next = newNode;
 
         //3. tail Update
-        newNode = tail;
+        tail = newNode;
+    }
+}
+
+void insertAtPostion(Node* &head, Node* &tail, int data, int postion){
+    // if postion <= 1 insert at head
+    if(postion == 1){
+        insertNodeAtHead(head, tail, data);
+    }
+
+    // if postion <= length at insert at tail
+    int length = findLengthLL(head);
+    if(postion >= length+1){
+        insertNodeAtTail(head, tail, data);
+    }
+    else{
+        // 1. create new node
+        Node* newNode = new Node(data);
+
+        // 2. traverse prev / curr to postion
+        Node* prev = NULL;
+        Node* curr = head;
+        while(postion != 1){
+            prev = curr;
+            curr = curr->next;
+            postion--;
+        }
+        // attached new node prev to newNode
+        prev->next = newNode;
+        newNode->next = curr;
     }
 }
 
@@ -104,12 +135,13 @@ int main(){
     Node* head = NULL;
     Node* tail = NULL;
 
-    insertNodeAtHead(head, tail, 10);
-    insertNodeAtHead(head, tail, 20);
+    insertNodeAtTail(head, tail, 1);
+    insertNodeAtTail(head, tail, 2);
+    insertNodeAtTail(head, tail, 5);
+     
     printLL(head);
 
-    cout<<endl;
-    insertNodeAtTail(head, tail, 5);
+    insertAtPostion(head, tail, 3, 3);
     printLL(head);
 
     // // Assign the value to the node
